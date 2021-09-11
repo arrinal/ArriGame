@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,12 @@
 		7076982F26EC947100D9D346 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076982E26EC947100D9D346 /* ContentView.swift */; };
 		7076983126EC947300D9D346 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7076983026EC947300D9D346 /* Assets.xcassets */; };
 		7076983426EC947300D9D346 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7076983326EC947300D9D346 /* Preview Assets.xcassets */; };
+		7076984226EC94C800D9D346 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076984126EC94C800D9D346 /* DataType.swift */; };
+		7076984426EC94F100D9D346 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076984326EC94F100D9D346 /* GameView.swift */; };
+		7076984626EC952300D9D346 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076984526EC952300D9D346 /* ProfileView.swift */; };
+		7076984826EC954A00D9D346 /* GetDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076984726EC954A00D9D346 /* GetDataViewModel.swift */; };
+		7076984C26EC95DC00D9D346 /* SwURL in Frameworks */ = {isa = PBXBuildFile; productRef = 7076984B26EC95DC00D9D346 /* SwURL */; };
+		7076984F26EC95EB00D9D346 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7076984E26EC95EB00D9D346 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,10 @@
 		7076983026EC947300D9D346 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7076983326EC947300D9D346 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7076983526EC947300D9D346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7076984126EC94C800D9D346 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		7076984326EC94F100D9D346 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		7076984526EC952300D9D346 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		7076984726EC954A00D9D346 /* GetDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7076984F26EC95EB00D9D346 /* SwiftyJSON in Frameworks */,
+				7076984C26EC95DC00D9D346 /* SwURL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				7076982C26EC947100D9D346 /* ArriGameApp.swift */,
-				7076982E26EC947100D9D346 /* ContentView.swift */,
+				7076984026EC94B900D9D346 /* Model */,
+				7076983B26EC949300D9D346 /* View */,
+				7076984926EC955000D9D346 /* View Model */,
 				7076983026EC947300D9D346 /* Assets.xcassets */,
 				7076983526EC947300D9D346 /* Info.plist */,
 				7076983226EC947300D9D346 /* Preview Content */,
@@ -67,6 +81,32 @@
 				7076983326EC947300D9D346 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7076983B26EC949300D9D346 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7076982E26EC947100D9D346 /* ContentView.swift */,
+				7076984326EC94F100D9D346 /* GameView.swift */,
+				7076984526EC952300D9D346 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7076984026EC94B900D9D346 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7076984126EC94C800D9D346 /* DataType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7076984926EC955000D9D346 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				7076984726EC954A00D9D346 /* GetDataViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +125,10 @@
 			dependencies = (
 			);
 			name = ArriGame;
+			packageProductDependencies = (
+				7076984B26EC95DC00D9D346 /* SwURL */,
+				7076984E26EC95EB00D9D346 /* SwiftyJSON */,
+			);
 			productName = ArriGame;
 			productReference = 7076982926EC947100D9D346 /* ArriGame.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +156,10 @@
 				Base,
 			);
 			mainGroup = 7076982026EC947100D9D346;
+			packageReferences = (
+				7076984A26EC95DC00D9D346 /* XCRemoteSwiftPackageReference "SwURL" */,
+				7076984D26EC95EB00D9D346 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 7076982A26EC947100D9D346 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7076982F26EC947100D9D346 /* ContentView.swift in Sources */,
+				7076984826EC954A00D9D346 /* GetDataViewModel.swift in Sources */,
+				7076984226EC94C800D9D346 /* DataType.swift in Sources */,
+				7076984626EC952300D9D346 /* ProfileView.swift in Sources */,
+				7076984426EC94F100D9D346 /* GameView.swift in Sources */,
 				7076982D26EC947100D9D346 /* ArriGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +380,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7076984A26EC95DC00D9D346 /* XCRemoteSwiftPackageReference "SwURL" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cmtrounce/SwURL";
+			requirement = {
+				kind = exactVersion;
+				version = 0.4.0;
+			};
+		};
+		7076984D26EC95EB00D9D346 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7076984B26EC95DC00D9D346 /* SwURL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7076984A26EC95DC00D9D346 /* XCRemoteSwiftPackageReference "SwURL" */;
+			productName = SwURL;
+		};
+		7076984E26EC95EB00D9D346 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7076984D26EC95EB00D9D346 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7076982126EC947100D9D346 /* Project object */;
 }
