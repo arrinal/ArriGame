@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DataType: Identifiable {
+struct DataTypeGeneral: Identifiable {
     var id: Int
     var slug: String
     var name: String

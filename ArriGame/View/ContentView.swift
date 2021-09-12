@@ -9,16 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var dataViewModel = GetDataViewModel()
+    @StateObject var dataDetailViewModel = GetDataDetailViewModel()
+    @StateObject var dataSearchViewModel = GetDataSearchViewModel()
     
     var body: some View {
         
         TabView {
             NavigationView {
-                GameView().environmentObject(dataViewModel)
+                GameView()
                     .navigationTitle("ArriGame")
             }
             .tabItem {
                 Label("Home", image: "HomeIcon")
+            }
+            
+            NavigationView {
+                SearchView()
+                    .navigationTitle("ArriGame")
+            }
+            .tabItem {
+                Label("Search", image: "SearchIcon")
             }
             
             
@@ -28,6 +38,9 @@ struct ContentView: View {
                 }
             
         }
+        .environmentObject(dataDetailViewModel)
+        .environmentObject(dataViewModel)
+        .environmentObject(dataSearchViewModel)
     }
 }
 

@@ -1,23 +1,35 @@
 //
-//  GameView.swift
+//  SearchView.swift
 //  ArriGame
 //
-//  Created by Arrinal Sholifadliq on 11/09/21.
+//  Created by Arrinal Sholifadliq on 12/09/21.
 //
 
 import SwiftUI
 import SwURL
 
-struct GameView: View {
-    @EnvironmentObject var dataViewModel: GetDataViewModel
-    @EnvironmentObject var dataDetailViewModel: GetDataDetailViewModel
+struct SearchView: View {
+    @EnvironmentObject var dataSearchViewModel: GetDataSearchViewModel
     
     var body: some View {
+        
         VStack {
-            Text("Featured Games")
-                .font(.headline)
+            TextField("Search your game...", text: $dataSearchViewModel.searchText, onCommit:  {
+                dataSearchViewModel.searchResult = []
+                dataSearchViewModel.addData()
+            })
+            .padding(.init(top: 11.5, leading: 10, bottom: 11.5, trailing: 10))
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 9)
+                    .stroke(Color.gray, lineWidth: 0.5)
+            )
+            .padding(.top)
+            .padding(.leading, 20)
+            .padding(.trailing, 20)
+            
             List {
-                ForEach(dataViewModel.datas) { result in
+                ForEach(dataSearchViewModel.searchResult, id: \.self) { result in
                     NavigationLink(destination: DetailView(slug: result.slug), label: {
                         HStack {
                             RemoteImageView(url: URL(string: result.background_image) ?? URL(string: "https://2.bp.blogspot.com/-7-shYuJQqn0/WfB2lCRFB3I/AAAAAAAAAcY/0SrOJlGlqk4ArEJRTjnK5JKcQ0cG7aGtQCLcBGAs/s200/Broken%2BImage.gif")!, placeholderImage: Image(systemName: "photo"), transition: .custom(transition: .opacity, animation: .easeIn(duration: 0.25)))
@@ -35,6 +47,7 @@ struct GameView: View {
                                         Text("Released Date")
                                         Text("Rating")
                                     }
+                                    
                                     VStack(alignment: .leading) {
                                         Text(":  \(result.released)")
                                         HStack {
@@ -44,7 +57,8 @@ struct GameView: View {
                                         }
                                         
                                     }
-                                }.font(.caption)
+                                }
+                                .font(.caption)
                             }
                         }
                     })
@@ -54,10 +68,8 @@ struct GameView: View {
     }
 }
 
-struct GameView_Previews: PreviewProvider {
+struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
-            .environmentObject(GetDataViewModel())
-            .environmentObject(GetDataDetailViewModel())
+        SearchView().environmentObject(GetDataSearchViewModel())
     }
 }

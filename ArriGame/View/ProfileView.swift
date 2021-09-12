@@ -10,9 +10,9 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         ZStack {
-         Image("BackgroundProfile")
-            .resizable(resizingMode: .stretch)
-            .ignoresSafeArea()
+            Image("BackgroundProfile")
+                .resizable(resizingMode: .stretch)
+                .ignoresSafeArea()
             
             VStack {
                 Image("Profile")
